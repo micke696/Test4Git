@@ -16,5 +16,22 @@ namespace Test4Git
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            write2status("Application started");
+            this.Text = "Test4Git ver. " + Application.ProductVersion.Substring(0, 5);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            write2status("Application exiting");
+            Application.Exit();
+        }
+        
+        private void write2status(string strData)
+        {
+            lstStatus.Items.Insert(0, DateTime.Now.ToString() + " - " + strData);
+        }
     }
 }
